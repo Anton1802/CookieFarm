@@ -230,6 +230,9 @@ Content
     background: red;
 }
 
+/*
+Profile User
+ */
 .profile{
     background-color: #f2cf8c;
     width: 300px;
@@ -241,4 +244,40 @@ Content
 
 .profile img{
     width: 20%;
+}
+
+/*
+Auth Form
+ */
+
+.auth{
+    max-width: 200px;
+    margin: 50px auto 0;
+    padding: 20px;
+    background: #f2cf8c;
+}
+
+.auth button{
+    margin: 5px 0px 0px 0px;
+    padding: 5px;
+}
+
+.auth h1{
+    padding: 7px;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1;
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+}
+
+.auth form{
+    display: block;
+    width: 100px;
+}
+
+.auth button:hover{
+    color: green;
+    box-shadow: 1px 2px 3px #f2cf8c;
 }
