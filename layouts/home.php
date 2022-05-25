@@ -12,20 +12,7 @@
 
     <?php require_once('header.php') ?>
 
-    <div class="auth">
-        <h1>Auth</h1>
-        <?php
-        session_start();
-        echo $_SESSION['error'];
-        ?>
-        <form action="/login_submit" method="POST">
-            <label>Login:</label>
-            <input type="text" name="login">
-            <label>Password:</label>
-            <input type="text" name="password">
-            <button type="submit" name="submit">Submit</button>
-        </form>
-    </div>
+
 
     <?php require_once('footer.php') ?>
 
