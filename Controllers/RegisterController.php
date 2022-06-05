@@ -15,8 +15,6 @@ class RegisterController
             if(ctype_alnum($login) && ctype_alnum($password))
             {
 
-                $_SESSION['error'] = 'Registration success!';
-
                 return [
                     'login' => $login,
                     'password' => $password
@@ -27,8 +25,6 @@ class RegisterController
         }
         else {
 
-            $_SESSION['error'] = 'Error: check login and password!';
-
             header('Location: /register');
 
             die();
@@ -37,7 +33,7 @@ class RegisterController
 
     }
 
-    public function view()
+    public function index()
     {
 
         return require_once('layouts/register.php');
