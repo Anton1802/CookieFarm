@@ -12,7 +12,7 @@ Router::route('/', function(){
 Router::route('/login', function(){
 
     require_once('Controllers/LoginController.php');
-    LoginController::view();
+    LoginController::index();
 
 });
 
@@ -23,10 +23,17 @@ Router::route('/login_submit', function() {
 
 });
 
+Router::route('/logout', function() {
+
+    require_once('Controllers/LoginController.php');
+    LoginController::logout();
+
+});
+
 Router::route('/register', function(){
 
     require_once('Controllers/RegisterController.php');
-    RegisterController::view();
+    RegisterController::index();
 
 });
 
@@ -35,4 +42,19 @@ Router::route('/register_submit', function(){
     require_once('Controllers/RegisterController.php');
     RegisterController::register();
 
+});
+
+Router::route('/cookies', function(){
+    require_once('Controllers/MyController.php');
+    MyController::index();
+});
+
+Router::route('/shop', function(){
+    require_once('Controllers/ShopController.php');
+    ShopController::index();
+});
+
+Router::route('/shop/buy/[1-4]', function(){
+    require_once('Controllers/ShopController.php');
+    ShopController::buy($_SERVER['REQUEST_URI']);
 });
