@@ -11,6 +11,13 @@ class Router
 
     private function __clone() {}
 
+    private function page404()
+    {
+
+        return require_once('layouts/page404.php');
+
+    }
+
     public static function route($pattern, $callback)
     {
 
@@ -34,6 +41,14 @@ class Router
                 return call_user_func_array($callback, array_values($params));
 
             }
+
+
+        }
+
+        if(!preg_match($pattern, $url, $params))
+        {
+
+            Router::page404();
 
         }
 
