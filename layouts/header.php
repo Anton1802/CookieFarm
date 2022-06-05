@@ -6,6 +6,7 @@
     <div class="menu">
         <div class="list">
             <?php if($_SESSION['user']): ?>
+            <a href="/logout">Out</a>
             <a href="/cookies">Cookies</a>
             <a href="/shop">Shop</a>
             <?php else: ?>
@@ -25,6 +26,7 @@
     <nav>
         <li><a href="/cookies">Cookies</a></li>
         <li><a href="/shop">Shop</a></li>
+        <li><a href="/logout">Out</a></li>
     </nav>
     <?php else: ?>
     <li><a href="/login">Login</a></li>

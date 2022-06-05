@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/resource/css/main.css">
     <link rel="shortcut icon" href="/resource/img/cookie.png">
-    <title>CookieFarm</title>
+    <title>Shop</title>
 </head>
 <body>
 
@@ -15,31 +15,38 @@
 <div class="cookielist">
     <p class="title_cookielist">Shop Cookies</p>
     <div class="card">
-            <img src="/resource/img/cookie_example.png" alt="cookie">
+            <img src="/resource/img/cookie1.png" alt="cookie">
             <p>С/h: 5</p>
             <p>Price: 200C</p>
-            <button>Buy</button>
+            <a href="/shop/buy/1"><button>Buy</button></a>
     </div>
     <div class="card">
-            <img src="/resource/img/cookie_example.png" alt="cookie">
+            <img src="/resource/img/cookie2.png" alt="cookie">
             <p>С/h: 10</p>
             <p>Price: 500C</p>
-            <button>Buy</button>
+            <a href="/shop/buy/2"><button>Buy</button></a>
     </div>
     <div class="card">
-            <img src="/resource/img/cookie_example.png" alt="cookie">
+            <img src="/resource/img/cookie3.png" alt="cookie">
             <p>С/h: 15</p>
             <p>Price: 1000C</p>
-            <button>Buy</button>
+            <a href="/shop/buy/3"><button>Buy</button></a>
+    </div>
+    <div class="card">
+            <img src="/resource/img/cookie4.png" alt="cookie">
+            <p>С/h: 20</p>
+            <p>Price: 2000C</p>
+            <a href="/shop/buy/4"><button>Buy</button></a>
     </div>
 </div>
 
-<?php require_once('profile.php') ?>
+<div class="profile">
+    <img src="/../resource/img/user.png">
+    <p>Name: <?=$_SESSION['user']['login']?></p>
+    <p>Coins: <?= $userDB->coins ?></p>
+</div>
 
 <?php require_once('footer.php') ?>
 
 </body>
-
-<script src="/resource/js/burger.js" charset="utf-8"></script>
-
 </html>

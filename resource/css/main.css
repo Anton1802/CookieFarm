@@ -149,6 +149,13 @@ header{
     float: right;
 }
 
+@media(max-width: 280px)
+{
+    header{
+        width: 280px;
+    }
+}
+
 /*
 Footer
  */
@@ -182,11 +189,12 @@ Content
 
 .cookielist{
     background-color: #f2cf8c;
-    height: 50%;
+    height: 280px;
     width: 300px;
     margin: auto;
-    margin-top: 7%;
+    margin-top: 4%;
     overflow: auto;
+    text-align: center;
 }
 
 .card{
@@ -214,7 +222,7 @@ Content
 .card button{
     background-color: green;
     margin-left: auto;
-    padding: 10px;
+    padding: 5px;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -225,8 +233,26 @@ Content
     outline: none;
 }
 
+.card a{
+    margin-left: auto;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
 .card button:hover{
     background: red;
+}
+
+@media(max-width: 280px)
+{
+
+    .cookielist{
+        width: 265px;
+    }
+
 }
 
 /*
@@ -236,9 +262,10 @@ Profile User
     background-color: #f2cf8c;
     width: 300px;
     margin: 0 auto;
-    margin-top: 10%;
+    margin-top: 10px;
     text-align: center;
     padding: 5px;
+    border-radius: 30px;
 }
 
 .profile img{
@@ -279,4 +306,43 @@ Auth Form
 .auth button:hover{
     color: green;
     box-shadow: 1px 2px 3px #f2cf8c;
+}
+
+@media(max-width: 280px)
+{
+
+    .profile{
+        width: 255px;
+    }
+
+}
+
+/*
+404 Page
+ */
+.content{
+    width: 50%;
+    background-color: #f2cf8c;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 50px;
+    position: relative;
+}
+
+.content button{
+    position: absolute;
+    left: 38%;
+    padding-left: 10%;
+    padding-right: 10%
+}
+
+.page404 {
+    padding: 50px;
+    text-align: center;
+}
+
+.page404 a{
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
 }

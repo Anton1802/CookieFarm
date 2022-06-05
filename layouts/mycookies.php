@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/resource/css/main.css">
     <link rel="shortcut icon" href="/resource/img/cookie.png">
-    <title>CookieFarm</title>
+    <title>Cookies</title>
 </head>
 <body>
 
@@ -15,28 +15,34 @@
 <div class="cookielist">
     <p class="title_cookielist">My Cookies</p>
     <div class="card">
-            <img src="/resource/img/cookie_example.png" alt="cookie">
-            <p>X 1</p>
-            <p>C/h: 5</p>
+            <img src="/resource/img/cookie1.png" alt="cookie">
+            <p>X <?= $userDB->cookie1 ?></p>
+            <p>Coin/h: 5</p>
     </div>
     <div class="card">
-            <img src="/resource/img/cookie_example.png" alt="cookie">
-            <p>X 2</p>
-            <p>C/h: 10</p>
+            <img src="/resource/img/cookie2.png" alt="cookie">
+            <p>X <?= $userDB->cookie2 ?></p>
+            <p>Coin/h: 10</p>
     </div>
     <div class="card">
-            <img src="/resource/img/cookie_example.png" alt="cookie">
-            <p>X 1</p>
-            <p>C/h: 15</p>
+            <img src="/resource/img/cookie3.png" alt="cookie">
+            <p>X <?= $userDB->cookie3 ?></p>
+            <p>Coin/h: 15</p>
+    </div>
+    <div class="card">
+            <img src="/resource/img/cookie4.png" alt="cookie">
+            <p>X <?= $userDB->cookie4 ?></p>
+            <p>Coin/h: 20</p>
     </div>
 </div>
 
-<?php require_once('profile.php') ?>
+<div class="profile">
+    <img src="/../resource/img/user.png">
+    <p>Name: <?=$_SESSION['user']['login']?></p>
+    <p>Coins: <?= $userDB->coins ?></p>
+</div>
 
 <?php require_once('footer.php') ?>
 
 </body>
-
-<script src="/resource/js/burger.js" charset="utf-8"></script>
-
 </html>
