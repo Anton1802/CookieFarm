@@ -7,7 +7,7 @@ use User;
 class LoginController
 {
 
-    public function view()
+    public function index()
     {
 
         return require_once('layouts/login.php');
@@ -31,19 +31,25 @@ class LoginController
                 'password' => $user->password
             ];
 
-            $_SESSION['error'] = 'Auth success!';
-
             header('Location: /');
 
         }
         else {
 
-            $_SESSION['error'] = 'User not finded!';
-
             header('Location: /login');;
 
         }
 
+    }
+
+    public function logout()
+    {
+
+        $_SESSION['user'] = '';
+
+        session_destroy();
+
+        header("Location: /");
 
     }
 
