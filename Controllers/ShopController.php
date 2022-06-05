@@ -2,7 +2,6 @@
 
 require_once('Models/User.php');
 
-use ErrorMessage;
 use User;
 
 class ShopController
