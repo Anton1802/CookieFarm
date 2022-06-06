@@ -31,12 +31,12 @@ class LoginController
                 'password' => $user->password
             ];
 
-            header('Location: /');
+            echo true;
 
         }
         else {
 
-            header('Location: /login');;
+            echo false;
 
         }
 
