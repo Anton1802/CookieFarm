@@ -25,9 +25,7 @@ class RegisterController
         }
         else {
 
-            header('Location: /register');
-
-            die();
+            return false;
 
         }
 
@@ -46,9 +44,18 @@ class RegisterController
         $data = RegisterController::validate($_POST['login'], $_POST['password']);
 
         $user = new User;
-        $user->insertUser($data['login'], $data['password']);
 
-        header('Location: /register');
+        if($data && $user->insertUser($data['login'], $data['password']))
+        {
+
+            echo true;
+
+        }
+        else {
+
+            echo false;
+
+        }
 
     }
 
