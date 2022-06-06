@@ -45,4 +45,8 @@
 <?php require_once('footer.php') ?>
 
 </body>
+
+<script src="/resource/js/jquery.min.js" charset="utf-8"></script>
+<script src="/resource/js/burger.js" charset="utf-8"></script>
+
 </html>

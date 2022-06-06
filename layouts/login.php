@@ -14,7 +14,7 @@
 
     <div class="auth">
         <h1>Auth</h1>
-        <form action="/login_submit" method="POST">
+        <form action="/login_submit" method="POST" id="loginform">
             <label>Login:</label>
             <input type="text" name="login">
             <label>Password:</label>
@@ -26,4 +26,8 @@
     <?php require_once('footer.php') ?>
 
 </body>
+
+<script src="/resource/js/jquery.min.js" charset="utf-8"></script>
+<script src="/resource/js/burger.js" charset="utf-8"></script>
+
 </html>
