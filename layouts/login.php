@@ -31,28 +31,6 @@
 <script src="/resource/js/jquery.min.js" charset="utf-8"></script>
 <script src="/resource/js/burger.js" charset="utf-8"></script>
 <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-
-<script>
-    var notyf = new Notyf();
-    $(function(){
-        $('form').submit(function(e){
-            var $form = $(this);
-            $.ajax({
-                type: $form.attr('method'),
-                url: $form.attr('action'),
-                data: $form.serialize(),
-                success: function(response) {
-                    if(response == 1){
-                        location="/cookies";
-                    }
-                    else{
-                        notyf.error('User not finded!')
-                    }
-                }
-            });
-            e.preventDefault();
-        });
-    });
-</script>
+<script src="/resource/js/login.js" charset="utf-8"></script>
 
 </html>

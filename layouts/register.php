@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/resource/css/main.css">
     <link rel="shortcut icon" href="/resource/img/cookie.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     <title>Register</title>
 </head>
 <body>
@@ -26,8 +27,8 @@
 <?php require_once('footer.php') ?>
 
 </body>
-
 <script src="/resource/js/jquery.min.js" charset="utf-8"></script>
 <script src="/resource/js/burger.js" charset="utf-8"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+<script src="/resource/js/register.js" charset="utf-8"></script>
 </html>
