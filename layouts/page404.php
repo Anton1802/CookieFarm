@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/resource/css/main.css">
     <link rel="shortcut icon" href="/resource/img/cookie.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>Error 404</title>
 </head>
 <body>

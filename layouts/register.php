@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/resource/css/main.css">
     <link rel="shortcut icon" href="/resource/img/cookie.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>Register</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
         <label>Login:</label>
         <input type="text" name="login">
         <label>Password:</label>
-        <input type="text" name="password">
+        <input type="password" name="password">
         <button type="submit" name="submit">Submit</button>
     </form>
 </div>
