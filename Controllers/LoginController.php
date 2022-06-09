@@ -10,7 +10,19 @@ class LoginController
     public function index()
     {
 
-        return require_once('layouts/login.php');
+        if($_SESSION['user'])
+        {
+
+            header('Location: /cookies');
+
+        }
+        else {
+
+            return require_once('layouts/login.php');
+            
+        }
+
+
 
     }
 
