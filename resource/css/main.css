@@ -6,6 +6,7 @@ Background
     margin: 0;
     padding: 0;
     font-style: normal;
+    font-family: 'Roboto', sans-serif;
 }
 
 body{
@@ -213,10 +214,12 @@ Content
 .title_cookielist{
     text-align: center;
     margin: 10px;
+    font-weight: bold;
 }
 
 .card p{
     padding: 10px;
+    white-space: nowrap;
 }
 
 .card button{
@@ -286,6 +289,15 @@ Auth Form
 .auth button{
     margin: 5px 0px 0px 0px;
     padding: 5px;
+    font-family: inherit;
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background: #905f00;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 .auth h1{
@@ -304,8 +316,31 @@ Auth Form
 }
 
 .auth button:hover{
-    color: green;
+    background: green;
     box-shadow: 1px 2px 3px #f2cf8c;
+}
+
+.auth input{
+    display: block;
+    width: 173px;
+    height: calc(1.00rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.auth label{
+    width: 100px;
+    font-style: italic;
+    font-size: 20px;
 }
 
 @media(max-width: 280px)
