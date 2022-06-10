@@ -30,10 +30,12 @@ class User
 
         $stmt = $db->prepare($sql);
 
-        $stmt->execute([
-            'login' => $login,
-            'password' => $password
-        ]);
+        if($stmt->execute(['login' => $login,'password' => $password]))
+        {
+
+            return true;
+
+        }
 
     }
 

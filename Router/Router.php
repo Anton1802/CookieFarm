@@ -5,50 +5,44 @@ namespace Router;
 class Router
 {
 
-    private static $routes = array();
+    private $routes = array();
 
-    private function __construct() {}
-
-    private function __clone() {}
-
-    private function page404()
+    private function enum($routes, $url)
     {
 
-        return require_once('layouts/page404.php');
-
-    }
-
-    public static function route($pattern, $callback)
-    {
-
-        $pattern = '/^' . str_replace('/', '\/', $pattern) . '$/';
-
-        self::$routes[$pattern] = $callback;
-
-    }
-
-    public static function execute($url)
-    {
-
-        foreach(self::$routes as $pattern => $callback)
+        foreach($this->routes as $router => $conFunctParam)
         {
 
-            if(preg_match($pattern, $url, $params))
+            if(preg_match($router, $url))
             {
 
-                array_shift($params);
+                $controller = $conFunctParam[0];
+                $function = $conFunctParam[1];
+                $parametrs = $conFunctParam[2];
 
-                return call_user_func_array($callback, array_values($params));
+                require_once("Controllers/$controller.php");
+
+                $contr = new $controller;
+
+                call_user_func_array(array($contr, $function), $parametrs);
+
+                return true;
 
             }
 
-
         }
 
-        if(!preg_match($pattern, $url, $params))
+    }
+
+    public function run($url)
+    {
+
+        $this->routes = require_once('config/routes.php');
+
+        if(!$this->enum($this->routes, $url))
         {
 
-            Router::page404();
+            return require_once('layouts/page404.php');
 
         }
 
