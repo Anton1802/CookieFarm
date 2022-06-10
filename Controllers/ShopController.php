@@ -42,12 +42,12 @@ class ShopController
 
             User::subUserCoins($_SESSION['user']['id'], $typePrice[$type]);
 
-            header("Location: /shop");
+            echo true;
 
         }
         else {
 
-            header("Location: /shop");
+            echo false;
 
         }
 
