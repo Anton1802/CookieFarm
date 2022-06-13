@@ -66,4 +66,58 @@ class MyController
 
     }
 
+    private function checkFileName()
+    {
+
+        $check = array('/\w.png$/', '/\w.jpg$/');
+
+        for($i=0; $i<count($check); $i++)
+        {
+
+            if(preg_match($check[$i], $_FILES['img']['name']))
+            {
+
+                return true;
+
+            }
+            else {
+
+                return false;
+
+            }
+
+        }
+
+    }
+
+    public function downloadAvatar()
+    {
+
+        $userDB = User::getUserId($_SESSION['user']['id']);
+        unlink($userDB->avatar);
+
+        $user = new User;
+
+        $fileName = $_FILES['img']['name'];
+        $tmpFileName = $_FILES['img']['tmp_name'];
+        $uploadDir = 'resource/img/avatars/';
+        $uploadFile = $uploadDir . $fileName;
+        $userId = $_SESSION['user']['id'];
+
+        if(move_uploaded_file($tmpFileName, $uploadFile)
+        && $this->checkFileName()
+        && $user->updateAvatar($userId, $uploadFile))
+        {
+
+            echo true;
+
+        }
+        else {
+
+            echo false;
+
+        }
+
+    }
+
 }
