@@ -39,6 +39,32 @@ class User
 
     }
 
+    public function updateAvatar($userId, $ImgPath)
+    {
+
+        $db = User::connect();
+
+        $sql = "UPDATE users SET avatar = :avatar WHERE id = :id";
+
+        $stmt = $db->prepare($sql);
+
+        $stmt->bindParam(':avatar', $ImgPath);
+        $stmt->bindParam(':id', $userId);
+
+        if($stmt->execute())
+        {
+
+            return true;
+
+        }
+        else {
+
+            return false;
+
+        }
+
+    }
+
     public function searchUser($login, $password)
     {
 
