@@ -43,7 +43,15 @@
 </div>
 
 <div class="profile">
-    <img src="/../resource/img/user.png">
+    <?php if(!$userDB->avatar): ?>
+    <form action="/avatar" method="POST" enctype="multipart/form-data">
+    <input class="input_img" type="file" name="img"><img class="download_img" src="/../resource/img/user.png"></input>
+    </form>
+    <?php else: ?>
+    <form action="/avatar" method="POST" enctype="multipart/form-data">
+    <input class="input_img" type="file" name="img"><img class="download_img" src="/../<?= $userDB->avatar ?>"></input>
+    </form>
+    <?php endif ?>
     <p>Name: <?=$_SESSION['user']['login']?></p>
     <p>Coins: <?= $userDB->coins ?></p>
 </div>
@@ -53,8 +61,8 @@
 </body>
 
 <script src="/resource/js/jquery.min.js" charset="utf-8"></script>
-<script src="/resource/js/burger.js" charset="utf-8"></script>
 <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+<script src="/resource/js/burger.js" charset="utf-8"></script>
 <script src="/resource/js/shop.js" charset="utf-8"></script>
 
 </html>

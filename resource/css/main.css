@@ -258,6 +258,7 @@ Content
 
 }
 
+
 /*
 Profile User
  */
@@ -273,6 +274,19 @@ Profile User
 
 .profile img{
     width: 20%;
+}
+
+.input_img{
+    z-index: 5;
+    width: 30px;
+    position: absolute;
+    margin-top:20px;
+    margin-left: 13px;
+    opacity: 0;
+}
+
+.download_img{
+    position: relative;
 }
 
 /*
