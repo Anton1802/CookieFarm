@@ -7,6 +7,30 @@ use User;
 class MyController
 {
 
+    private function checkFileName($fileName)
+    {
+
+        $check = array('/\w.png$/', '/\w.jpg$/');
+
+        for($i=0; $i<count($check); $i++)
+        {
+
+            if(preg_match($check[$i], $fileName))
+            {
+
+                return true;
+
+            }
+            else {
+
+                return false;
+
+            }
+
+        }
+
+    }
+
     private function getNowDate()
     {
 
@@ -66,30 +90,6 @@ class MyController
 
     }
 
-    private function checkFileName()
-    {
-
-        $check = array('/\w.png$/', '/\w.jpg$/');
-
-        for($i=0; $i<count($check); $i++)
-        {
-
-            if(preg_match($check[$i], $_FILES['img']['name']))
-            {
-
-                return true;
-
-            }
-            else {
-
-                return false;
-
-            }
-
-        }
-
-    }
-
     public function downloadAvatar()
     {
 
@@ -105,7 +105,7 @@ class MyController
         $userId = $_SESSION['user']['id'];
 
         if(move_uploaded_file($tmpFileName, $uploadFile)
-        && $this->checkFileName()
+        && $this->checkFileName($fileName)
         && $user->updateAvatar($userId, $uploadFile))
         {
 
